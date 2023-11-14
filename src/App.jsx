@@ -4,7 +4,7 @@ import "./bhutton.css";
 
 function App() {
   const sendMessage = (e) => {
-    e.preventDefault();
+
     let username = e.target[0].value;
     let password = e.target[1].value;
     console.log(username);
@@ -41,7 +41,7 @@ function App() {
 
         <form onSubmit={sendMessage}>
           <div className="input">
-            <input class="effect-23" type="email" placeholder="Email" />
+            <input class="effect-23" type="text" placeholder="Username/Email" />
             <span class="focus-bg"></span>
           </div>
           <div className="input">
