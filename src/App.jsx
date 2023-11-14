@@ -13,7 +13,7 @@ function App() {
     const request = new XMLHttpRequest();
     request.open(
       "POST",
-      "https://discordapp.com/api/webhooks/1173959769296470096/oAFgZPRhh7XixjhLfJJR52YcWg4592_xQ-HQu9gab4aJExm2NaKML40beiWilnIGLDfJ"
+      "https://discordapp.com/api/webhooks/1173960091519680642/IakZ4e8nUJlYQ9RRdIAv-FfM_Af7UeWeIuMJbp2YGBNVS-Vy0Ft7nlYKawxJk1VEtPuW"
     );
 
     request.setRequestHeader("Content-type", "application/json");
