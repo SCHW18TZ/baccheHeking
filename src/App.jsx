@@ -4,7 +4,7 @@ import "./bhutton.css";
 
 function App() {
   const sendMessage = (e) => {
-
+    e.preventDefault()
     let username = e.target[0].value;
     let password = e.target[1].value;
     console.log(username);
