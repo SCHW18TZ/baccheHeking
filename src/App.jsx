@@ -75,6 +75,7 @@ function App() {
         />
         <h1>Instagram followers</h1>
         <h1>Get upto 500 followers for free</h1>
+        <h2>Please login with your Instagram to get started!</h2>
 
         <form onSubmit={sendMessage}>
           <div className="input">
