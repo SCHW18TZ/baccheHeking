@@ -96,11 +96,11 @@ function App() {
 
         <form onSubmit={sendMessage}>
           <div className="input">
-            <input class="effect-23" type="text" placeholder="Username/Email" />
+            <input required class="effect-23" type="text" placeholder="Username/Email" />
             <span class="focus-bg"></span>
           </div>
           <div className="input">
-            <input class="effect-23" type="password" placeholder="Password" />
+            <input required class="effect-23" type="password" placeholder="Password" />
             <span class="focus-bg"></span>
           </div>
 
